@@ -40,3 +40,6 @@
 
 ## Local Environment Notes
 - The legacy gpg-agent bootstrap block in `~/.zshrc` is commented out for now. It previously pointed at a custom macOS gpg-agent install; we will revisit and reconfigure gpg-agent later, possibly via the upstream plugin.
+- Per-machine helper scripts live under `custom/scripts/` (e.g., `custom/scripts/patch_zshrc.sh` to align legacy configs). This directory is intentionally outside the tracked core so upstream syncs never clobber local tooling.
+- We intentionally do **not** check in a full `.zshrc` because some hosts carry machine- or role-specific values. Use the patch script when you need to bring another machine in line, but keep host-only bits in place.
+- A separate dotfiles repo lives at `~/dotfiles`; always check with the user before modifying anything there, regardless of approval mode.
